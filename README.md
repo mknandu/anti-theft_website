@@ -48,4 +48,4 @@ For any inquiries or issues regarding this repository, please contact [mknandukr
 
 We would like to express our gratitude to [list any individuals, organizations, or resources that contributed to the project or provided inspiration].
 
-inquiries or issues regarding this repository, please contact [your_email@example.com](mailto:mknandukrishna007@gmail.com).
+inquiries or issues regarding this repository, please contact [your_mknandukrishna007@gmail.com](mailto:mknandukrishna007@gmail.com).
