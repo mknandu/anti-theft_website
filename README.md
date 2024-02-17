@@ -38,7 +38,7 @@ Contributions to this project are welcome! If you would like to contribute, plea
 
 ## License:
 
-This project is licensed under the [KTU License](LICENSE), which means you are free to use, modify, and distribute the code for personal or commercial purposes.
+This project is licensed under the [Apache License](LICENSE), which means you are free to use, modify, and distribute the code for personal or commercial purposes.
 
 ## Contact:
 
