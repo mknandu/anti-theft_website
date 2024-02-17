@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Theft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #video-container {
+            width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #start-button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        #stop-button {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="video-container">
+            <video id="webcam-feed" autoplay playsinline></video>
+            <button id="start-button" class="btn">Start</button>
+            <button id="stop-button" class="btn">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        let videoStream;
+
+        // Check for browser support
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    videoStream = stream;
+                    var video = document.getElementById('webcam-feed');
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch(function(error) {
+                    console.error('Error accessing webcam:', error);
+                });
+        } else {
+            console.error('getUserMedia is not supported on your browser');
+        }
+
+        // Start button functionality
+        document.getElementById('start-button').addEventListener('click', function() {
+            if (!videoStream) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        videoStream = stream;
+                        var video = document.getElementById('webcam-feed');
+                        video.srcObject = stream;
+                        video.play();
+                    })
+                    .catch(function(error) {
+                        console.error('Error accessing webcam:', error);
+                    });
+            }
+        });
+
+        // Stop button functionality
+        document.getElementById('stop-button').addEventListener('click', function() {
+            if (videoStream) {
+                let tracks = videoStream.getTracks();
+                tracks.forEach(track => track.stop());
+                videoStream = null;
+            }
+        });
+    </script>
+</body>
+</html>
