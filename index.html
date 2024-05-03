@@ -4,7 +4,269 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anti-Theft</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+/* Global Styles */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  /* Header Styles */
+  
+  header {
+    position: fixed;
+    
+     z-index: 10;
+  }
+  header {
+    width: 96%;
+    background-color: #232222;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 2em;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .header-center {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .social-icons i {
+    font-size: 1.5em;
+  }
+  
+  /* Include font awesome styles, if not already imported */
+  .fa {
+    font-family: FontAwesome;
+  }
+  
+  
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+  h1.mainh1 {
+    
+    color: rgb(64, 64, 64)
+    ;
+    font-size: 5em; 
+    /* Increases size to 2.5 times the default */
+  }
+  
+  
+  /* Section Styles */
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  section.advancedfeatures{
+    padding-top: 50px;
+      text-align:center;
+      padding-bottom: 100px;
+  }
+  h1.advancedftr{
+    padding: 100px;
+    font-size: 3em;
+    color: #504d4d;
+    font-family: 'Roboto Slab', serif;
+
+  }
+  
+  section.location,.contact,.feature {
+    flex: 1;
+    background-color: #f0f0f0;
+     scroll-snap-align: start;
+    height: 100vh; /* Adjust if needed */
+  }
+  section.contact,.feature{
+    text-align: center;
+    padding: 30px;
+  }
+  
+  /* Importance Section Styles */
+  
+  .importance {
+    background-color: #fff;
+    padding: 200px 200px 200px 150px;
+    
+    }
+  .importance p{
+    font-size: 1.3em;
+    color: rgb(100, 99, 99);
+  }
+ 
+  
+  /* Features Section Styles */
+  
+ .features { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  div.feature {
+    height: 300px;
+    width: calc(22% - 20px); /* Adjust spacing as needed */
+    margin: 25px;
+    padding: 100px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: left;
+    transition: 0.3s;
+  }
+  
+
+  .feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  .feature .icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  /* section info */
+
+  .info{
+    font-family:  Indie Flower;
+    color: #000000;
+    padding: 100px 0 100px 100px;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Light variant */
+
+    word-spacing: 5px;
+    
+    line-height: 1.7;
+  }
+  
+  /* Location Section Styles */
+  
+  .location {
+    background-color: #eee;
+    padding: 100px 30px 100px 100px;
+    text-align: left;
+    
+  }
+  /* letter design in location*/
+  .aboutus{
+    position: relative;
+    top: -100px;
+    font-size: 3.5em;
+    color: #746f6f;
+  }
+  .abtus{
+    position: relative;
+    top: -100px;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Light variant */
+  }
+
+
+
+
+  .location div{
+    display: inline-block;
+    
+    flex-direction: column;
+  }
+  .location figure img{
+    height: 500px;
+    width: 750px;
+  }
+
+  
+  /* Contact Section Styles */
+  
+  .contact {
+    background-color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    resize: none;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Background Animation (Optional) */
+  
+  section:nth-child(2) {
+    background: linear-gradient(to right, #f0f0f0 0%, #fff 50%, #f0f0f0 100%);
+    background-size: 200%;
+    animation: moveBackground 10s linear infinite;
+  }
+  
+  @keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -200% 0; }
+  }
+  #stream-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+  
+  </style>
+ 
 </head>
 <body>
   <header>
@@ -37,6 +299,9 @@
         The Ultimate IoT-Based CCTV Camera with Motion Tracing Powered by <br>Raspberry Pi. 
         Protect Your Valuables with Cutting-Edge Technology.</p>
     </section>
+    
+
+
     <section class="info">
       <p>Introducing Anti Theft, an innovative IoT-based theft detection CCTV camera powered
         by Raspberry Pi. Our cutting-edge <br>technology combines advanced motion tracing
@@ -52,6 +317,10 @@
         step ahead of potential intruders.
       </p>
     </section>
+    <img id="stream-image" src="" alt="JPEG Stream">
+
+
+
    <section class="advancedfeatures">
      <h1 class="advancedftr">Advanced Features</h1>
      <section class="features">
@@ -123,6 +392,25 @@
       </form>
     </section>
   </main>
-  <script src="main.js"></script>
+  <script>
+    var img = document.getElementById('stream-image');
+    var intervalId;
+
+    function updateImage() {
+        img.src = 'stream.jpg?' + new Date().getTime();
+    }
+
+    function startStream() {
+        intervalId = setInterval(updateImage, 200);
+    }
+
+    function stopStream() {
+        clearInterval(intervalId);
+    }
+
+    startStream();
+</script>
+
+  <!--<script src="main.js"></script> --> 
 </body>
 </html>
